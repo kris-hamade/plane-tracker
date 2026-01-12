@@ -1,0 +1,25 @@
+{
+  "name": "plane-tracker",
+  "version": "1.0.0",
+  "description": "ADS-B takeoff/landing notifier with Discord webhook integration",
+  "type": "module",
+  "main": "notifier.mjs",
+  "scripts": {
+    "start": "node notifier.mjs"
+  },
+  "keywords": [
+    "ads-b",
+    "aircraft",
+    "tracking",
+    "discord",
+    "notifications"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "form-data": "^4.0.0",
+    "dotenv": "^16.3.1"
+  }
+}
+
