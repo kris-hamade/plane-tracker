@@ -74,6 +74,37 @@ ADS-B takeoff/landing notifier with Discord webhook integration. Monitors an air
    node notifier.mjs
    ```
 
+## Docker Deployment
+
+### Using Pre-built Image
+
+The application is automatically built and published to GitHub Container Registry (GHCR) on pushes to main.
+
+Pull and run:
+```bash
+docker pull ghcr.io/YOUR_USERNAME/plane-tracker:latest
+docker run -d \
+  --name plane-tracker \
+  -p 3000:3000 \
+  -e RAPIDAPI_KEY=your-key \
+  -e ICAO24=4867e6 \
+  -e DISCORD_WEBHOOK_URL=your-webhook \
+  ghcr.io/YOUR_USERNAME/plane-tracker:latest
+```
+
+### Building Locally
+
+```bash
+docker build -t plane-tracker .
+docker run -d \
+  --name plane-tracker \
+  -p 3000:3000 \
+  --env-file .env \
+  plane-tracker
+```
+
+**Note:** Make sure your `.env` file contains all required variables, or pass them via `-e` flags.
+
 ## How It Works
 
 ### Dual-Endpoint Position Verification
