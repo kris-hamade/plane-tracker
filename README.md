@@ -37,7 +37,7 @@ ADS-B takeoff/landing notifier with Discord webhook integration. Monitors an air
    ```env
    # Required
    RAPIDAPI_KEY=your-rapidapi-key-here
-   ICAO24=4867e6
+   ICAO24=4844e6
    DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/your-webhook-url-here
 
    # Optional
@@ -49,7 +49,7 @@ ADS-B takeoff/landing notifier with Discord webhook integration. Monitors an air
 
    **Required variables:**
    - `RAPIDAPI_KEY`: Your RapidAPI key for ADSBexchange (get from [RapidAPI](https://rapidapi.com/adsbexchange-com1-adsbexchange-com1-default/api/adsbexchange-com1))
-   - `ICAO24`: The 6-character hex code of the aircraft to monitor (e.g., `4867e6`) - can also be set via API
+   - `ICAO24`: The 6-character hex code of the aircraft to monitor (e.g., `4844e6`) - can also be set via API
    - `DISCORD_WEBHOOK_URL`: Your Discord webhook URL
 
    **Optional API variables:**
@@ -87,7 +87,7 @@ docker run -d \
   --name plane-tracker \
   -p 3000:3000 \
   -e RAPIDAPI_KEY=your-key \
-  -e ICAO24=4867e6 \
+  -e ICAO24=4844e6 \
   -e DISCORD_WEBHOOK_URL=your-webhook \
   ghcr.io/YOUR_USERNAME/plane-tracker:latest
 ```
@@ -243,8 +243,8 @@ GET http://localhost:3000/api/icao
 Response:
 ```json
 {
-  "icao24": "4867e6",
-  "globe_url": "https://globe.adsbexchange.com/?icao=4867e6",
+  "icao24": "4844e6",
+  "globe_url": "https://globe.adsbexchange.com/?icao=4844e6",
   "state": "ON_GROUND",
   "monitoring": true
 }
@@ -283,9 +283,9 @@ GET http://localhost:3000/api/status
 Response:
 ```json
 {
-  "icao24": "4867e6",
+  "icao24": "4844e6",
   "state": "AIRBORNE",
-  "globe_url": "https://globe.adsbexchange.com/?icao=4867e6",
+  "globe_url": "https://globe.adsbexchange.com/?icao=4844e6",
   "last_event": { "type": "TAKEOFF", "ts": 1234567890 },
   "last_known_position": { "lat": 43.67, "lon": 7.22 },
   "monitoring": true
